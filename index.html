@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GV Academic Writers | Professional Academic Writing Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+      /* Custom CSS */
+      :root {
+        --primary: #3b82f6;
+        --secondary: #1e40af;
+        --accent: #dbeafe;
+        --dark: #1f2937;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--secondary);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .testimonial-card {
+        transition: all 0.3s ease;
+      }
+
+      .testimonial-card:hover {
+        transform: scale(1.02);
+      }
+
+      #back-to-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 99;
+      }
+      .footer {
+        background: var(--dark);
+      }
+      .whatsapp-icon {
+        position: fixed;
+        bottom: 80px;
+        right: 40px;
+        z-index: 1000;
+      }
+
+      .whatsapp-icon a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        background-color: #25d366;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        animation: blink 1.5s infinite; /* Add blinking animation */
+      }
+
+      .whatsapp-icon a:hover {
+        transform: scale(1.2);
+      }
+
+      .whatsapp-icon img {
+        width: 35px;
+        height: 35px;
+      }
+
+      @keyframes blink {
+        0% {
+          transform: scale(1.1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1.1);
+        }
+      }
+
+      .whatsapp-icon a {
+        animation-timing-function: ease-in-out;
+      }
+
+      /* Class to hide the icon (from previous solution) */
+      .whatsapp-icon.hidden {
+        display: none;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.8s ease forwards;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full z-10 p-2">
+      <div class="container mx-auto px-4 md:px-6 py-3">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center">
+            <a href="#" class="text-2xl font-bold text-blue-600">
+              GV
+              <span class="text-gray-800">Academic</span>
+            </a>
+          </div>
+
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Services</a>
+            <a href="#process" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Our Process</a>
+            <a href="#testimonials" class="nav-link text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+            <a
+              href="https://wa.me/94710488368"
+              target="_blank"
+              class="nav-link text-gray-700 hover:text-blue-600 font-medium">
+              Contact
+            </a>
+          </div>
+
+          <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-700 hover:text-blue-600 focus:outline-none">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="hidden md:block">
+            <a href="https://wa.me/94710488368" target="_blank" class="btn-primary px-5 py-2 rounded-lg font-medium">
+              Get Started
+            </a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden py-4 animate-fade-in">
+          <a href="#home" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Home</a>
+          <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Services</a>
+          <a href="#process" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Our Process</a>
+          <a href="#testimonials" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+          <a href="#contact" class="block py-2 text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+          <a
+            href="https://wa.me/94710488368"
+            target="_blank"
+            class="btn-primary block text-center mt-3 px-5 py-2 rounded-lg font-medium">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-24 pb-16 md:pt-32 md:pb-24">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 mb-10 md:mb-0 animate-fade-in" style="animation-delay: 0.2s">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Expert Academic Writing Services</h1>
+            <p class="text-lg md:text-xl mb-8 text-blue-100">
+              We help students achieve academic excellence with our professional writing assistance. Quality,
+              originality, and on-time delivery guaranteed.
+            </p>
+            <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <a
+                href="#services"
+                class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-medium text-center transition-all duration-300">
+                Our Services
+              </a>
+            </div>
+          </div>
+          <div class="md:w-1/2 animate-fade-in" style="animation-delay: 0.4s"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Why Choose GV Academic Writers?</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            We're dedicated to helping students achieve academic success with our expert writing services.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="text-center px-6 py-8 rounded-xl shadow-md bg-white animate-fade-in"
+            style="animation-delay: 0.2s">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-check-circle text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">100% Original Content</h3>
+            <p class="text-gray-600">
+              Every assignment is written from scratch to ensure originality and avoid plagiarism.
+            </p>
+          </div>
+
+          <div
+            class="text-center px-6 py-8 rounded-xl shadow-md bg-white animate-fade-in"
+            style="animation-delay: 0.4s">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-clock text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">On-Time Delivery</h3>
+            <p class="text-gray-600">
+              We understand deadlines are crucial. We always deliver your work on or before the agreed time.
+            </p>
+          </div>
+
+          <div
+            class="text-center px-6 py-8 rounded-xl shadow-md bg-white animate-fade-in"
+            style="animation-delay: 0.6s">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class="fas fa-user-graduate text-blue-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">Expert Writers</h3>
+            <p class="text-gray-600">
+              Our team consists of subject matter experts with advanced degrees in various fields.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Services</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            We offer a wide range of academic writing services to help you excel in your studies.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 animate-fade-in"
+            style="animation-delay: 0.2s">
+            <div class="bg-blue-600 h-2"></div>
+            <div class="p-6">
+              <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Essays & Research Papers</h3>
+              <p class="text-gray-600 mb-4">
+                Well-researched, properly structured essays and research papers that meet academic standards.
+              </p>
+              <ul class="text-gray-600 mb-6 space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Various citation styles (APA, MLA, Chicago)
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  In-depth research and analysis
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Clear thesis and arguments
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/94710488368"
+                target="_blank"
+                class="btn-primary block text-center px-4 py-2 rounded-lg font-medium">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 animate-fade-in"
+            style="animation-delay: 0.4s">
+            <div class="bg-blue-600 h-2"></div>
+            <div class="p-6">
+              <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-book text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Term Papers & Projects</h3>
+              <p class="text-gray-600 mb-4">
+                Comprehensive term papers and complex academic projects customized to your requirements.
+              </p>
+              <ul class="text-gray-600 mb-6 space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Extensive literature review
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Proper methodology
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Detailed analysis and evaluation
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/94710488368"
+                target="_blank"
+                class="btn-primary block text-center px-4 py-2 rounded-lg font-medium">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 animate-fade-in"
+            style="animation-delay: 0.6s">
+            <div class="bg-blue-600 h-2"></div>
+            <div class="p-6">
+              <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Dissertations & Theses</h3>
+              <p class="text-gray-600 mb-4">
+                Expert assistance with complex dissertation and thesis papers at graduate and PhD levels.
+              </p>
+              <ul class="text-gray-600 mb-6 space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Original research design
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Statistical analysis
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Comprehensive literature review
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/94710488368"
+                target="_blank"
+                class="btn-primary block text-center px-4 py-2 rounded-lg font-medium">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 animate-fade-in"
+            style="animation-delay: 0.8s">
+            <div class="bg-blue-600 h-2"></div>
+            <div class="p-6">
+              <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-pencil-alt text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Assignment Help</h3>
+              <p class="text-gray-600 mb-4">
+                Assistance with various types of academic assignments across different subjects.
+              </p>
+              <ul class="text-gray-600 mb-6 space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Case studies
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Problem-solving tasks
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Reports and presentations
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/94710488368"
+                target="_blank"
+                class="btn-primary block text-center px-4 py-2 rounded-lg font-medium">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 animate-fade-in"
+            style="animation-delay: 1s">
+            <div class="bg-blue-600 h-2"></div>
+            <div class="p-6">
+              <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-edit text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Editing & Proofreading</h3>
+              <p class="text-gray-600 mb-4">
+                Professional editing and proofreading services to polish your academic papers.
+              </p>
+              <ul class="text-gray-600 mb-6 space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Grammar and spelling correction
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Style and flow improvement
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Citation formatting
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/94710488368"
+                target="_blank"
+                class="btn-primary block text-center px-4 py-2 rounded-lg font-medium">
+                Get Started
+              </a>
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="service-card bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 animate-fade-in"
+            style="animation-delay: 1.2s">
+            <div class="bg-blue-600 h-2"></div>
+            <div class="p-6">
+              <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                <i class="fas fa-laptop-code text-blue-600 text-xl"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-gray-800">Technical & Lab Reports</h3>
+              <p class="text-gray-600 mb-4">
+                Expertly crafted technical and lab reports for science, engineering, and IT courses.
+              </p>
+              <ul class="text-gray-600 mb-6 space-y-2">
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Detailed methodology
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Data analysis and visualization
+                </li>
+                <li class="flex items-center">
+                  <i class="fas fa-check text-blue-600 mr-2"></i>
+                  Technical documentation
+                </li>
+              </ul>
+              <a
+                href="https://wa.me/94710488368"
+                target="_blank"
+                class="btn-primary block text-center px-4 py-2 rounded-lg font-medium">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-16 bg-white">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Our Process</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            We follow a streamlined process to ensure you get the best academic writing assistance.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Step 1 -->
+          <div class="text-center animate-fade-in" style="animation-delay: 0.2s">
+            <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+              <span class="text-blue-600 font-bold text-2xl">1</span>
+              <div
+                class="absolute w-full h-full rounded-full border-2 border-blue-600 border-dashed animate-spin"
+                style="animation-duration: 15s"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">Submit Requirements</h3>
+            <p class="text-gray-600">Fill out our order form with your assignment details and requirements.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center animate-fade-in" style="animation-delay: 0.4s">
+            <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+              <span class="text-blue-600 font-bold text-2xl">2</span>
+              <div
+                class="absolute w-full h-full rounded-full border-2 border-blue-600 border-dashed animate-spin"
+                style="animation-duration: 15s"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">Get a Quote</h3>
+            <p class="text-gray-600">Receive a personalized quote based on your specific requirements.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center animate-fade-in" style="animation-delay: 0.6s">
+            <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+              <span class="text-blue-600 font-bold text-2xl">3</span>
+              <div
+                class="absolute w-full h-full rounded-full border-2 border-blue-600 border-dashed animate-spin"
+                style="animation-duration: 15s"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">Writer Assignment</h3>
+            <p class="text-gray-600">We assign the most qualified writer with expertise in your subject area.</p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="text-center animate-fade-in" style="animation-delay: 0.8s">
+            <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+              <span class="text-blue-600 font-bold text-2xl">4</span>
+              <div
+                class="absolute w-full h-full rounded-full border-2 border-blue-600 border-dashed animate-spin"
+                style="animation-duration: 15s"></div>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-800">Delivery & Revision</h3>
+            <p class="text-gray-600">Receive your completed assignment with free revisions if needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16 animate-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">What Our Clients Say</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Don't just take our word for it. Here's what students have to say about our services.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card bg-white p-6 rounded-xl shadow-md animate-fade-in" style="animation-delay: 0.2s">
+            <div class="flex items-center mb-4">
+              <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <span class="font-bold text-blue-600">JM</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Bhashaana Vimukthi</h4>
+                <p class="text-gray-600 text-sm">Undergraduate, Networking & Cyber security</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="text-gray-600 italic">
+              "GV Academic Writers helped me with my degree dissertation when I was struggling with time constraints.
+              The quality of work was exceptional, and I received excellent feedback from my professor."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card bg-white p-6 rounded-xl shadow-md animate-fade-in" style="animation-delay: 0.4s">
+            <div class="flex items-center mb-4">
+              <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <span class="font-bold text-blue-600">SK</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">Supun B. Herath</h4>
+                <p class="text-gray-600 text-sm">Undergraduate, BIT</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+            </div>
+            <p class="text-gray-600 italic">
+              "I was struggling with my research paper until I found GV Academic Writers. Their expert guidance helped
+              me understand complex concepts and improved my writing skills significantly."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card bg-white p-6 rounded-xl shadow-md animate-fade-in" style="animation-delay: 0.6s">
+            <div class="flex items-center mb-4">
+              <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                <span class="font-bold text-blue-600">DT</span>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800">S. Nadeeshani</h4>
+                <p class="text-gray-600 text-sm">PhD Candidate, chemistry</p>
+              </div>
+            </div>
+            <div class="mb-4">
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star text-yellow-400"></i>
+              <i class="fas fa-star-half-alt text-yellow-400"></i>
+            </div>
+            <p class="text-gray-600 italic">
+              "The technical writing assistance I received from GV Academic Writers was outstanding. Their writers
+              understood complex concepts and helped me doing researches."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Full-Width Footer Section -->
+    <footer class="footer min-w-full mt-16 mb-0" id="contact">
+      <!-- Top Wave Shape -->
+
+      <!-- Main Footer Content -->
+      <div class="w-full px-6 md:px-12 lg:px-24 py-12 bg-gradient-to-b from-[#3B82F6] to-[#1E40AF]">
+        <div class="container mx-auto">
+          <!-- Upper Footer with 3 columns -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Company Info -->
+            <div class="mb-8 md:mb-0">
+              <div class="flex items-center mb-6">
+                <h3 class="text-2xl font-bold text-blue-600">
+                  GV
+                  <span class="text-white">Academic</span>
+                </h3>
+              </div>
+              <p class="text-white mb-6">
+                Professional academic writing services for students and researchers. We deliver high-quality work that
+                meets your deadlines and exceeds expectations.
+              </p>
+              <div class="flex space-x-4 mt-6">
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] hover:text-blue-600 transition duration-300">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] hover:text-blue-600 transition duration-300">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] hover:text-blue-600 transition duration-300">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] hover:text-blue-600 transition duration-300">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="mb-8 md:mb-0">
+              <h3 class="text-xl font-bold mb-6 pb-2 border-b border-[#DBEAFE] text-white">Quick Links</h3>
+              <div class="grid grid-cols-2">
+                <ul class="space-y-3">
+                  <li>
+                    <a href="#" class="flex items-center text-white hover:text-blue-600 transition duration-300">
+                      <i class="fas fa-chevron-right mr-2 text-[#DBEAFE] text-xs"></i>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#services"
+                      class="flex items-center text-white hover:text-blue-600 transition duration-300">
+                      <i class="fas fa-chevron-right mr-2 text-[#DBEAFE] text-xs"></i>
+                      Services
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#process" class="flex items-center text-white hover:text-blue-600 transition duration-300">
+                      <i class="fas fa-chevron-right mr-2 text-[#DBEAFE] text-xs"></i>
+                      Our Process
+                    </a>
+                  </li>
+                </ul>
+                <ul class="space-y-3">
+                  <li>
+                    <a
+                      href="#testimonials"
+                      class="flex items-center text-white hover:text-blue-600 transition duration-300">
+                      <i class="fas fa-chevron-right mr-2 text-[#DBEAFE] text-xs"></i>
+                      Testimonials
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="https://wa.me/94710488368"
+                      target="_blank"
+                      class="flex items-center text-white hover:text-blue-600 transition duration-300">
+                      <i class="fas fa-chevron-right mr-2 text-[#DBEAFE] text-xs"></i>
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+              <h3 class="text-xl font-bold mb-6 pb-2 border-b border-[#DBEAFE] text-white">Contact Us</h3>
+              <ul class="space-y-4">
+                <li class="flex items-center">
+                  <div class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] mr-3">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <span class="text-white">Colombo, Sri Lanka</span>
+                </li>
+                <li class="flex items-center">
+                  <div class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] mr-3">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <a href="mailto:kmbhashana@gmail.com" class="hover:text-blue-600 transition duration-300 text-white">
+                    kmbhashana@gmail.com
+                  </a>
+                </li>
+                <li class="flex items-center">
+                  <div class="w-10 h-10 rounded-full flex items-center justify-center bg-white text-[#1E40AF] mr-3">
+                    <i class="fab fa-whatsapp"></i>
+                  </div>
+                  <a
+                    href="https://wa.me/94710488368"
+                    target="_blank"
+                    class="hover:text-blue-600 transition duration-300 text-white">
+                    +94 710 488 368
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Copyright Bar -->
+      <div class="w-full py-4 bg-[#1E40AF]">
+        <div class="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-[#DBEAFE] text-sm md:text-base text-white">
+            &copy; 2025 GV Academic Writers. All rights reserved.
+          </p>
+          <div class="mt-3 md:mt-0 text-white">
+            <a href="#" class="text-[#DBEAFE] hover:text-blue-600 mx-2 text-sm md:text-base transition duration-300">
+              Privacy Policy
+            </a>
+            <span class="text-[#DBEAFE]">|</span>
+            <a href="#" class="text-[#DBEAFE] hover:text-blue-600 mx-2 text-sm md:text-base transition duration-300">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 90"
+          fill="#3B82F6"
+          preserveAspectRatio="none"
+          class="w-full">
+          <path
+            d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,74.7C1120,75,1280,53,1360,42.7L1440,32L1440,90L1360,90C1280,90,1120,90,960,90C800,90,640,90,480,90C320,90,160,90,80,90L0,90Z"></path>
+        </svg>
+      </div>
+    </footer>
+    <div class="whatsapp-icon">
+      <a href="https://wa.me/94710488368" target="_blank" title="Contact us on WhatsApp">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      </a>
+    </div>
+    <!-- Font Awesome for icons -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const whatsappIcon = document.querySelector(".whatsapp-icon");
+        const footer = document.getElementById("contact");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                // Footer is visible, hide the WhatsApp icon
+                whatsappIcon.classList.add("hidden");
+              } else {
+                // Footer is not visible, show the WhatsApp icon
+                whatsappIcon.classList.remove("hidden");
+              }
+            });
+          },
+          {
+            threshold: 0.1, // Trigger when 10% of the footer is visible
+          }
+        );
+
+        observer.observe(footer);
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuToggle.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        const menuLinks = mobileMenu.getElementsByTagName("a");
+      for (let link of menuLinks) {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+      }
+      });
+     
+    </script>
+  </body>
+</html>
